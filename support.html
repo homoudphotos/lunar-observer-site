@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Lunar Observer</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         max-width: 720px; margin: 40px auto; padding: 0 20px; line-height: 1.6;
+         color: #222; background: #fafafa; }
+  h1 { color: #1a1a2e; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; }
+  h2 { color: #2a2a4a; margin-top: 32px; }
+  h3 { color: #2a2a4a; margin-top: 20px; margin-bottom: 4px; }
+  ul { padding-left: 24px; }
+  a { color: #4a6fa5; }
+  .email { display: inline-block; padding: 12px 20px; background: #4a6fa5; color: white;
+           border-radius: 8px; text-decoration: none; margin: 8px 0; }
+  .email:hover { background: #3a5a85; }
+</style>
+</head>
+<body>
+
+<h1>Lunar Observer — Support</h1>
+
+<p>For questions, bug reports, feature requests, or any feedback, email:</p>
+
+<p><a class="email" href="mailto:homoudphotos@live.com">homoudphotos@live.com</a></p>
+
+<p>Please include your device model and iOS version so I can reproduce any issues.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Why does the app ask for my location?</h3>
+<p>The Moon's rise and set times depend on where you are on Earth. Your coordinates are used only for on-device calculations and are never transmitted or stored on any server.</p>
+
+<h3>Do I have to share my location?</h3>
+<p>No — you can skip the GPS permission entirely. In Settings, choose a city from the built-in list or enter coordinates manually. The app works fully without GPS.</p>
+
+<h3>The moonrise time seems off by an hour.</h3>
+<p>Check that your device's timezone is set correctly. The app uses IANA timezone data, so countries that observe political timezones (like Spain on UTC+1 or China on UTC+8) are handled correctly — but only if your device's timezone matches.</p>
+
+<h3>What's the Hijri date based on?</h3>
+<p>The app uses the Umm al-Qura calendar via iOS's built-in Islamic calendar engine, anchored to the selected location's timezone so the date rolls over correctly no matter where you are in the world.</p>
+
+<h3>Why does the app say "Next day" next to moonrise or moonset?</h3>
+<p>The Moon's orbital period is about 24 hours 50 minutes, so on roughly one day per lunar month, the Moon will either not rise or not set within the civil day. When that happens, the app shows the next-day event with a "Next day" badge so you still see when it will occur.</p>
+
+<h3>Can I switch to Arabic?</h3>
+<p>Yes — in Settings, change Language to العربية. The entire interface flips to right-to-left layout with Arabic numerals and authentic astronomical terminology.</p>
+
+<h3>Which eclipses does the app show?</h3>
+<p>All upcoming solar and lunar eclipses. For each eclipse, the app computes local circumstances for your coordinates — whether it's visible, the contact times, magnitude, and the Moon's altitude at maximum.</p>
+
+<h3>How accurate are the calculations?</h3>
+<p>The app uses the VSOP87 theory for the Sun and planets and the ELP2000-82B theory for the Moon — the same semi-analytic models used in professional astronomy software. Rise and set times are typically accurate to within a few seconds.</p>
+
+</body>
+</html>
