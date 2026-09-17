@@ -12,46 +12,214 @@
   h2 { color: #2a2a4a; margin-top: 32px; }
   code, .meta { color: #666; font-size: 14px; }
   ul { padding-left: 24px; }
+  li { margin-bottom: 4px; }
   a { color: #4a6fa5; }
+  .lang-switch { font-size: 15px; margin: 0 0 24px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; margin: 12px 0; }
+  th, td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: start; vertical-align: top; }
+  th { background: #f0f0f4; color: #2a2a4a; }
+  hr { border: none; border-top: 2px solid #e0e0e0; margin: 56px 0 8px; }
+  [dir="rtl"] { font-family: -apple-system, "SF Arabic", "Geeza Pro", Tahoma, sans-serif; line-height: 1.8; }
+  [dir="rtl"] ul { padding-left: 0; padding-right: 24px; }
+  /* On phones the three-column table is too narrow to read, so each
+     service becomes its own card with labelled lines. */
+  @media (max-width: 600px) {
+    table, tbody, tr, td { display: block; }
+    tr:first-child { display: none; }
+    tr { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; }
+    td { border: none; padding: 3px 0; }
+    td:first-child { font-weight: 600; color: #1a1a2e; }
+    td[data-label]::before { content: attr(data-label) " "; font-weight: 600; color: #555; }
+  }
 </style>
 </head>
 <body>
 
+<section id="english">
 <h1>Privacy Policy — Lunar Observer</h1>
-<p class="meta">Last updated: April 19, 2026</p>
+<p class="meta">Last updated: September 17, 2026</p>
+<p class="lang-switch"><a href="#arabic" lang="ar">العربية</a></p>
 
-<p>Lunar Observer ("the app") is designed with privacy as a first principle. This policy explains exactly what data the app handles and what happens to it.</p>
+<p>Lunar Observer ("the app") is published by Humoud Salmeen ("we", "us"). The app has no accounts and no advertising, and it performs all of its astronomical calculations on your device. The app sends limited information to outside services: some only when you use a particular feature, and OneSignal, our notification service, whenever you use the app. This policy explains what each service receives, why, and the choices available to you.</p>
 
-<h2>What the app accesses</h2>
+<h2>At a glance</h2>
+<table>
+  <tr><th>Service</th><th>What it receives</th><th>When</th></tr>
+  <tr><td>OneSignal (notifications)</td><td data-label="Receives:">An ID that OneSignal assigns to your device, device model, iOS and app version, network type, device language and time zone, the app's language setting, app usage sessions, whether notifications are allowed and opened, IP address, and a push token if notifications are allowed</td><td data-label="When:">Whenever you use the app (from version 2.1)</td></tr>
+  <tr><td>Apple Push Notification service</td><td data-label="Receives:">Your device's registration for notifications, and the notifications we send</td><td data-label="When:">If notifications are allowed</td></tr>
+  <tr><td>Apple location service</td><td data-label="Receives:">Location coordinates, to find the place name and time zone</td><td data-label="When:">When the app uses your GPS location, or when you enter coordinates manually</td></tr>
+  <tr><td>Apple Maps</td><td data-label="Receives:">Requests for map images of the area on screen, which at first can be the area around your selected location</td><td data-label="When:">When you view a solar eclipse map</td></tr>
+  <tr><td>NASA Scientific Visualization Studio</td><td data-label="Receives:">IP address and the date and hour of each Moon photograph</td><td data-label="When:">Whenever the app is open, starting at launch</td></tr>
+  <tr><td>Open-Meteo</td><td data-label="Receives:">IP address and location coordinates (to about 11 metres), to look up ground elevation</td><td data-label="When:">Only when Astronomer Mode and Observer Altitude are both turned on</td></tr>
+</table>
 
-<p><strong>Location</strong> — When you grant location permission, the app reads your current latitude and longitude from your device. This is used only to compute accurate moonrise, moonset, and lunar position for your coordinates. Your location is never transmitted off your device, never stored on any server, and is not shared with any third party.</p>
-
-<p>If you prefer not to share your location, you can instead select a city from the built-in list or enter coordinates manually in Settings — the app works fully without the GPS permission.</p>
-
-<h2>What the app does NOT do</h2>
-
+<h2>Notifications (OneSignal)</h2>
+<p>OneSignal is included from version 2.1; earlier versions do not send information to OneSignal.</p>
+<p>We use OneSignal, Inc. as our service provider to send announcements about notable lunar events, such as eclipses, conjunctions and the Hijri crescent sighting. When you first open the app, OneSignal's software inside the app registers your device with OneSignal, and it keeps that registration up to date while you use the app. This happens whether or not you allow notifications. OneSignal receives:</p>
 <ul>
-  <li>The app does not collect, store, or transmit any personal information.</li>
-  <li>The app does not use analytics, tracking, advertising identifiers, or any third-party SDKs of any kind.</li>
-  <li>The app does not require an account, email, or sign-in.</li>
-  <li>The app does not contact any server for its astronomical calculations — all computations happen on your device.</li>
+  <li>an ID that OneSignal assigns to your device (it does not include your name, email address or Apple Account);</li>
+  <li>your device model, iOS version, app version and network type (Wi-Fi or cellular);</li>
+  <li>your device's language and time zone, and the language you chose in the app (English or Arabic);</li>
+  <li>how often and for how long you use the app, and whether you open a notification we sent;</li>
+  <li>whether you have allowed notifications, whichever way you answer, and any later change to that choice;</li>
+  <li>your IP address, from which OneSignal records an approximate country;</li>
+  <li>if you allow notifications, a push token from Apple that lets our notifications reach your device.</li>
+</ul>
+<p>If you allowed notifications in an earlier version of the app (for example, for Moon reminders), the app does not ask again, and your device's push token is sent to OneSignal the first time you open version 2.1.</p>
+<p>We use this information to deliver notifications, to send them in your language, and for analytics: how often and for how long the app is used, and how many people open our notifications. We do not use your country or time zone to choose who receives notifications, and we do not use any of this information for advertising. OneSignal does not receive your location coordinates. If a notification contains a web link, tapping the notification opens the link in your browser.</p>
+
+<h2>Location</h2>
+<p>The app needs a location to calculate moonrise, moonset and the Moon's position. You can allow location access, choose a city from the built-in list, or enter coordinates yourself.</p>
+<ul>
+  <li>All calculations run on your device.</li>
+  <li>When the app uses your GPS location, or when you enter coordinates manually, it sends those coordinates to Apple's location service through iOS to find the place name and time zone. When you choose a city from the built-in list or a saved favorite, the location is not sent to Apple's location service.</li>
+  <li>If you turn on both Astronomer Mode and Observer Altitude (both are off by default), the app sends the coordinates of the location you are using, to four decimal places (about 11 metres), to Open-Meteo to look up the ground elevation. This happens when you open the location settings and when you edit coordinates.</li>
+  <li>Solar eclipse maps are provided by Apple Maps, which loads map images for the area on screen. Before the eclipse path appears, this can be the area around your selected location.</li>
+  <li>We never receive or store your location coordinates on any server, and they are never sent to OneSignal.</li>
 </ul>
 
-<h2>Data on your device</h2>
+<h2>Moon photographs (NASA)</h2>
+<p>Whenever the app is open, starting at launch, it downloads hourly Moon photographs from NASA's Scientific Visualization Studio (svs.gsfc.nasa.gov). Choosing the 3D Moon display does not stop all of these downloads. Like any web request, they reveal your IP address to NASA. The web address of each photograph contains its date and hour, which can reflect the time zone of your selected location. No identifier or location coordinates are sent. Downloaded photographs are kept in a cache on your device.</p>
 
-<p>The app stores your chosen settings (preferred language, time format, last selected location) locally using iOS UserDefaults. This data stays on your device and is removed when you uninstall the app.</p>
+<h2>Information stored on your device</h2>
+<p>The app keeps the following on your device: your settings (such as language, time format and display options), your selected location and saved favorite locations, your notification preferences and the reminders scheduled from them, cached Moon photographs, and OneSignal's device ID and push token. Moon reminders are scheduled on your device and are not sent to any server. All of this is removed when you delete the app.</p>
+
+<h2>What we do not do</h2>
+<ul>
+  <li>We do not ask for your name, email address or phone number, and the app has no accounts.</li>
+  <li>We do not show advertising, use the advertising identifier (IDFA), or track you across other companies' apps and websites.</li>
+  <li>We do not sell your information or share it for advertising.</li>
+</ul>
+
+<h2>Your choices</h2>
+<ul>
+  <li><strong>Notifications:</strong> Allow or decline when the app asks, and change your choice at any time in iOS Settings → Notifications → Lunar Observer. Turning notifications off stops them from arriving, but OneSignal keeps your device's registration, including any push token already sent, and continues to receive the device and usage information described above while the app is installed. The app does not currently have a setting to stop this; deleting the app does.</li>
+  <li><strong>Location:</strong> Decline location access, or change it in iOS Settings → Privacy &amp; Security → Location Services, and choose a city from the built-in list instead.</li>
+  <li><strong>Elevation lookups:</strong> Keep Astronomer Mode or Observer Altitude turned off.</li>
+  <li><strong>Everything:</strong> Deleting the app stops all information from being sent.</li>
+</ul>
+
+<h2>How long information is kept</h2>
+<ul>
+  <li><strong>On your device:</strong> until you delete the app.</li>
+  <li><strong>OneSignal:</strong> your device's record is kept until we delete it, or until OneSignal deletes it under its retention rules (on OneSignal's free plan, 18 months after the app was last used on that device). Deleting the app does not delete the record immediately, and opening the app again creates a new record. Records of the notifications we send are kept for about 30 days, or until we delete them.</li>
+  <li><strong>Deletion requests:</strong> to ask us to delete your OneSignal data, email us. Because the app has no accounts and does not show your OneSignal ID, we may not be able to find your record; if we cannot, it is deleted as described above.</li>
+  <li><strong>Open-Meteo:</strong> server logs, which may include your IP address and coordinates, are deleted after 90 days according to its terms.</li>
+  <li><strong>NASA and Apple:</strong> according to their own privacy policies.</li>
+</ul>
+
+<h2>Outside services and their policies</h2>
+<p>We share information only with the services listed below, and only as described in this policy. OneSignal processes information on our behalf as our service provider. We confirm that each of these services provides the same or equal protection of your information as this policy describes. They may process information outside your country, including in the European Union, Switzerland and the United States.</p>
+<ul>
+  <li>OneSignal: <a href="https://onesignal.com/privacy_policy">onesignal.com/privacy_policy</a></li>
+  <li>Apple: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
+  <li>NASA: <a href="https://www.nasa.gov/privacy/">nasa.gov/privacy</a></li>
+  <li>Open-Meteo: <a href="https://open-meteo.com/en/terms">open-meteo.com/en/terms</a></li>
+</ul>
 
 <h2>Children's privacy</h2>
-
-<p>The app is suitable for all ages and does not collect any information from users of any age.</p>
+<p>The app is rated 4+ and is suitable for all ages. It does not ask anyone, including children, for a name, contact details or an account. From every user, the app collects the information described in the Notifications section (an ID assigned to the device, device details, IP address and app usage) to deliver notifications and measure app usage. Apple, NASA and Open-Meteo receive the information described above when those features are used.</p>
 
 <h2>Changes to this policy</h2>
-
-<p>If this policy changes in the future, the "Last updated" date at the top of the page will be revised. The current version will always be available at this URL.</p>
+<p>When our data practices change, we will update this policy and the "Last updated" date at the top of this page. The current version is always available at this address.</p>
 
 <h2>Contact</h2>
+<p>Humoud Salmeen — questions or requests about your privacy: <a href="mailto:homoudphotos@live.com">homoudphotos@live.com</a></p>
+</section>
 
-<p>Questions about this policy? Contact: <a href="mailto:homoudphotos@live.com">homoudphotos@live.com</a></p>
+<hr>
+
+<section id="arabic" lang="ar" dir="rtl">
+<h1>سياسة الخصوصية — راصد القمر</h1>
+<p class="meta">آخر تحديث: 17 سبتمبر 2026</p>
+<p class="lang-switch"><a href="#english" lang="en">English</a></p>
+
+<p>يُنشر تطبيق راصد القمر («التطبيق») بواسطة <span dir="ltr">Humoud Salmeen</span> («نحن»). ولا يتضمن التطبيق أي حسابات ولا يعرض إعلانات، ويُجري جميع حساباته الفلكية على جهازك. ويرسل التطبيق معلومات محدودة إلى خدمات خارجية: بعضها لا يتلقاها إلا عند استخدامك ميزة معينة، أما OneSignal، خدمة الإشعارات لدينا، فتتلقاها عند استخدامك للتطبيق. توضح هذه السياسة ما تتلقاه كل خدمة، والغرض منه، والخيارات المتاحة لك.</p>
+
+<h2>نظرة سريعة</h2>
+<table>
+  <tr><th>الخدمة</th><th>ما تتلقاه</th><th>متى</th></tr>
+  <tr><td>OneSignal (الإشعارات)</td><td data-label="ما تتلقاه:">معرّف تخصصه OneSignal لجهازك، وطراز الجهاز، وإصدار iOS وإصدار التطبيق، ونوع الشبكة، ولغة الجهاز ومنطقته الزمنية، ولغة التطبيق المختارة، وجلسات استخدام التطبيق، وما إذا كانت الإشعارات مسموحًا بها ومرات فتحها، وعنوان IP، والرمز المميز للإشعارات (push token) إذا كانت الإشعارات مسموحًا بها</td><td data-label="متى:">عند استخدامك للتطبيق (بدءًا من الإصدار 2.1)</td></tr>
+  <tr><td>خدمة إشعارات Apple</td><td data-label="ما تتلقاه:">تسجيل جهازك لتلقي الإشعارات، والإشعارات التي نرسلها</td><td data-label="متى:">إذا كانت الإشعارات مسموحًا بها</td></tr>
+  <tr><td>خدمة الموقع من Apple</td><td data-label="ما تتلقاه:">إحداثيات الموقع، لمعرفة اسم المكان ومنطقته الزمنية</td><td data-label="متى:">عند استخدام موقعك عبر GPS، أو عند إدخال الإحداثيات يدويًا</td></tr>
+  <tr><td>خرائط Apple</td><td data-label="ما تتلقاه:">طلبات صور الخريطة للمنطقة الظاهرة على الشاشة، وقد تكون في البداية المنطقة المحيطة بموقعك المختار</td><td data-label="متى:">عند عرض خريطة كسوف الشمس</td></tr>
+  <tr><td>استوديو التمثيل المرئي العلمي في ناسا</td><td data-label="ما تتلقاه:">عنوان IP، وتاريخ كل صورة للقمر وساعتها</td><td data-label="متى:">طوال فتح التطبيق، بدءًا من تشغيله</td></tr>
+  <tr><td>Open-Meteo</td><td data-label="ما تتلقاه:">عنوان IP وإحداثيات الموقع (بدقة نحو 11 مترًا)، لمعرفة ارتفاع سطح الأرض</td><td data-label="متى:">لا يحدث إلا عند تفعيل وضع الراصد الفلكي وارتفاع الراصد معًا</td></tr>
+</table>
+
+<h2>الإشعارات (OneSignal)</h2>
+<p>أُضيفت خدمة OneSignal بدءًا من الإصدار 2.1، ولا ترسل الإصدارات السابقة أي معلومات إلى OneSignal.</p>
+<p>نستعين بشركة <span dir="ltr">OneSignal, Inc.</span> بصفتها مزوّد خدمة لنا لإرسال إشعارات بأبرز الأحداث القمرية، مثل الكسوف والخسوف والاقترانات وتحري الهلال. وعند فتح التطبيق لأول مرة، يسجّل برنامج OneSignal المدمج في التطبيق جهازك لديها، ثم يحدّث هذا التسجيل أثناء استخدامك للتطبيق. ويحدث ذلك سواء سمحت بالإشعارات أم لم تسمح. وتتلقى OneSignal ما يلي:</p>
+<ul>
+  <li>معرّفًا تخصصه OneSignal لجهازك (لا يتضمن اسمك أو بريدك الإلكتروني أو حساب Apple الخاص بك)؛</li>
+  <li>طراز جهازك، وإصدار iOS، وإصدار التطبيق، ونوع الشبكة (Wi-Fi أو خلوية)؛</li>
+  <li>لغة جهازك ومنطقته الزمنية، واللغة التي اخترتها في التطبيق (العربية أو الإنجليزية)؛</li>
+  <li>عدد مرات استخدامك للتطبيق ومدته، وما إذا فتحت إشعارًا أرسلناه؛</li>
+  <li>ما إذا كنت قد سمحت بالإشعارات، أيًّا كان اختيارك، وأي تغيير لاحق عليه؛</li>
+  <li>عنوان IP الخاص بك، الذي تستنتج منه OneSignal بلدك على وجه التقريب؛</li>
+  <li>إذا سمحت بالإشعارات، الرمز المميز للإشعارات (push token) من Apple، الذي يتيح وصول إشعاراتنا إلى جهازك.</li>
+</ul>
+<p>وإذا كنت قد سمحت بالإشعارات في إصدار سابق من التطبيق (مثلًا لتذكيرات القمر)، فلن يطلب التطبيق الإذن مرة أخرى، وسيُرسل الرمز المميز للإشعارات الخاص بجهازك إلى OneSignal عند فتح الإصدار 2.1 لأول مرة.</p>
+<p>نستخدم هذه المعلومات لإيصال الإشعارات، وإرسالها بلغتك، ولأغراض التحليل: معرفة عدد مرات استخدام التطبيق ومدته، وعدد من يفتحون إشعاراتنا. ولا نستخدم بلدك أو منطقتك الزمنية لتحديد من يتلقى الإشعارات، ولا نستخدم أيًّا من هذه المعلومات لأغراض إعلانية. ولا تتلقى OneSignal إحداثيات موقعك. وإذا تضمّن الإشعار رابط ويب، فإن الضغط على الإشعار يفتح الرابط في متصفحك.</p>
+
+<h2>الموقع</h2>
+<p>يحتاج التطبيق إلى موقع لحساب أوقات شروق القمر وغروبه وموقعه في السماء. ويمكنك السماح بالوصول إلى موقعك، أو اختيار مدينة من القائمة المدمجة، أو إدخال الإحداثيات بنفسك.</p>
+<ul>
+  <li>تُجرى جميع الحسابات على جهازك.</li>
+  <li>عند استخدام موقعك عبر GPS، أو عند إدخال الإحداثيات يدويًا، يرسل التطبيق هذه الإحداثيات إلى خدمة الموقع من Apple عبر نظام iOS لمعرفة اسم المكان ومنطقته الزمنية. أما عند اختيار مدينة من القائمة المدمجة أو من المواقع المفضلة المحفوظة، فلا يُرسل الموقع إلى خدمة الموقع من Apple.</li>
+  <li>إذا فعّلت وضع الراصد الفلكي وارتفاع الراصد معًا (وكلاهما غير مفعّل افتراضيًا)، فإن التطبيق يرسل إحداثيات الموقع المستخدم، بدقة أربع خانات عشرية (نحو 11 مترًا)، إلى Open-Meteo لمعرفة ارتفاع سطح الأرض. ويحدث ذلك عند فتح إعدادات الموقع وعند تعديل الإحداثيات.</li>
+  <li>تُعرض خرائط كسوف الشمس عبر خرائط Apple، التي تحمّل صور الخريطة للمنطقة الظاهرة على الشاشة. وقبل ظهور مسار الكسوف، قد تكون هذه المنطقة هي المنطقة المحيطة بموقعك المختار.</li>
+  <li>لا نتلقى إحداثيات موقعك ولا نخزّنها على أي خادم، ولا تُرسل إلى OneSignal مطلقًا.</li>
+</ul>
+
+<h2>صور القمر (ناسا)</h2>
+<p>طوال فتح التطبيق، بدءًا من تشغيله، يحمّل التطبيق صورًا للقمر لكل ساعة من استوديو التمثيل المرئي العلمي (<span dir="ltr">Scientific Visualization Studio</span>) التابع لوكالة ناسا (svs.gsfc.nasa.gov). ولا يؤدي اختيار عرض القمر ثلاثي الأبعاد إلى إيقاف جميع هذه التنزيلات. وكأي طلب عبر الإنترنت، تكشف هذه الطلبات عنوان IP الخاص بك لناسا. ويتضمن رابط كل صورة تاريخها وساعتها، وقد يدل ذلك على المنطقة الزمنية للموقع المختار. ولا يُرسل أي معرّف أو إحداثيات للموقع. وتُحفظ الصور المحمّلة في ذاكرة مؤقتة على جهازك.</p>
+
+<h2>المعلومات المحفوظة على جهازك</h2>
+<p>يحتفظ التطبيق على جهازك بما يلي: إعداداتك (مثل اللغة وتنسيق الوقت وخيارات العرض)، والموقع المختار والمواقع المفضلة المحفوظة، وتفضيلات الإشعارات والتذكيرات المجدولة بناءً عليها، وصور القمر المحفوظة مؤقتًا، ومعرّف الجهاز لدى OneSignal والرمز المميز للإشعارات (push token). وتُجدول تذكيرات القمر على جهازك ولا تُرسل إلى أي خادم. وتُحذف جميع هذه المعلومات عند حذف التطبيق.</p>
+
+<h2>ما لا نفعله</h2>
+<ul>
+  <li>لا نطلب اسمك أو بريدك الإلكتروني أو رقم هاتفك، ولا يتضمن التطبيق أي حسابات.</li>
+  <li>لا نعرض إعلانات، ولا نستخدم معرّف الإعلانات (IDFA)، ولا نتتبعك عبر تطبيقات الشركات الأخرى ومواقعها الإلكترونية.</li>
+  <li>لا نبيع معلوماتك ولا نشاركها لأغراض إعلانية.</li>
+</ul>
+
+<h2>خياراتك</h2>
+<ul>
+  <li><strong>الإشعارات:</strong> اسمح بها أو ارفضها عندما يطلب التطبيق ذلك، ويمكنك تغيير اختيارك في أي وقت من «الإعدادات» في iOS ← «الإشعارات» ← <span dir="ltr">Lunar Observer</span>. ويؤدي إيقاف الإشعارات إلى منع وصولها، لكن OneSignal تحتفظ بتسجيل جهازك، بما في ذلك الرمز المميز للإشعارات إن كان قد أُرسل، وتستمر في تلقي معلومات الجهاز والاستخدام الموضحة أعلاه ما دام التطبيق مثبتًا. ولا يتضمن التطبيق حاليًا إعدادًا لإيقاف ذلك، ويتوقف ذلك بحذف التطبيق.</li>
+  <li><strong>الموقع:</strong> ارفض الوصول إلى موقعك، أو غيّر ذلك من «الإعدادات» في iOS ← «الخصوصية والأمان» ← «خدمات الموقع»، واختر مدينة من القائمة المدمجة بدلًا من ذلك.</li>
+  <li><strong>طلبات معرفة ارتفاع سطح الأرض:</strong> أبقِ وضع الراصد الفلكي أو ارتفاع الراصد غير مفعّل.</li>
+  <li><strong>كل ما سبق:</strong> يؤدي حذف التطبيق إلى إيقاف إرسال أي معلومات.</li>
+</ul>
+
+<h2>مدة الاحتفاظ بالمعلومات</h2>
+<ul>
+  <li><strong>على جهازك:</strong> إلى أن تحذف التطبيق.</li>
+  <li><strong>OneSignal:</strong> يُحتفظ بسجل جهازك إلى أن نحذفه، أو إلى أن تحذفه OneSignal وفق قواعد الاحتفاظ لديها (وفي الباقة المجانية من OneSignal، بعد 18 شهرًا من آخر استخدام للتطبيق على ذلك الجهاز). ولا يؤدي حذف التطبيق إلى حذف السجل فورًا، ويؤدي فتح التطبيق مرة أخرى إلى إنشاء سجل جديد. ويُحتفظ بسجلات الإشعارات التي نرسلها نحو 30 يومًا، أو إلى أن نحذفها.</li>
+  <li><strong>طلبات الحذف:</strong> لطلب حذف بياناتك لدى OneSignal، راسلنا عبر البريد الإلكتروني. ولأن التطبيق لا يتضمن حسابات ولا يعرض معرّفك لدى OneSignal، فقد لا نتمكن من العثور على سجلك؛ وفي هذه الحالة يُحذف على النحو الموضح أعلاه.</li>
+  <li><strong>Open-Meteo:</strong> تُحذف سجلات الخادم، التي قد تتضمن عنوان IP والإحداثيات، بعد 90 يومًا وفقًا لشروطها.</li>
+  <li><strong>ناسا وApple:</strong> وفقًا لسياسات الخصوصية الخاصة بكل منهما.</li>
+</ul>
+
+<h2>الخدمات الخارجية وسياساتها</h2>
+<p>لا نشارك المعلومات إلا مع الخدمات المذكورة أدناه، وبالقدر الموضح في هذه السياسة فقط. وتعالج OneSignal هذه المعلومات نيابةً عنا بصفتها مزوّد خدمة لنا. ونؤكد أن كل خدمة من هذه الخدمات توفر لمعلوماتك حماية مماثلة أو مساوية لما تصفه هذه السياسة. وقد تُعالَج المعلومات خارج بلدك، بما في ذلك الاتحاد الأوروبي وسويسرا والولايات المتحدة.</p>
+<ul>
+  <li>OneSignal: <a href="https://onesignal.com/privacy_policy" dir="ltr">onesignal.com/privacy_policy</a></li>
+  <li>Apple: <a href="https://www.apple.com/legal/privacy/" dir="ltr">apple.com/legal/privacy</a></li>
+  <li>ناسا: <a href="https://www.nasa.gov/privacy/" dir="ltr">nasa.gov/privacy</a></li>
+  <li>Open-Meteo: <a href="https://open-meteo.com/en/terms" dir="ltr">open-meteo.com/en/terms</a></li>
+</ul>
+
+<h2>خصوصية الأطفال</h2>
+<p>التطبيق مصنّف لعمر 4+ ومناسب لجميع الأعمار. ولا يطلب من أي شخص، بمن فيهم الأطفال، اسمًا أو بيانات تواصل أو إنشاء حساب. ويجمع التطبيق من جميع المستخدمين المعلومات الموضحة في قسم الإشعارات (معرّف مخصص للجهاز، وبيانات الجهاز، وعنوان IP، وبيانات الاستخدام) لإيصال الإشعارات ومعرفة مدى استخدام التطبيق. وتتلقى Apple وناسا وOpen-Meteo المعلومات الموضحة أعلاه عند استخدام الميزات المرتبطة بها.</p>
+
+<h2>التغييرات على هذه السياسة</h2>
+<p>عندما تتغير ممارساتنا المتعلقة بالبيانات، سنحدّث هذه السياسة وتاريخ «آخر تحديث» أعلى هذه الصفحة. وتتوفر النسخة الحالية دائمًا على هذا العنوان.</p>
+
+<h2>التواصل</h2>
+<p><span dir="ltr">Humoud Salmeen</span> — للأسئلة أو الطلبات المتعلقة بخصوصيتك: <a href="mailto:homoudphotos@live.com" dir="ltr">homoudphotos@live.com</a></p>
+</section>
 
 </body>
 </html>
